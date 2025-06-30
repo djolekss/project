@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="istorija_bolesti" class="content-tab">
+    {% if istorija %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Ime životinje</th>
+                    <th>Vreme pregleda</th>
+                    <th>Dijagnoza</th>
+                    <th>Terapija</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in istorija %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning">Nemate istoriju bolesti još uvek!</div>
+    {% endif %}
+</div>
+{% endblock %}

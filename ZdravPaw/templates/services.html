@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center my-4 naslov-boja">Usluge</h2>
+<div class="container">
+    <div class="row g-3 justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="vakcinacija">🐶 Vakcinacija</button>
+            <div id="vakcinacija" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Vakcinacija</h3>
+                    <p>Redovna zaštita ljubimaca vakcinacijom.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="hirurgija">🩺 Hirurgija</button>
+            <div id="hirurgija" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Hirurgija</h3>
+                    <p>Obavljamo rutinske i složene hirurške intervencije.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="dijagnostika">🧪
+                Dijagnostika</button>
+            <div id="dijagnostika" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Laboratorijska dijagnostika</h3>
+                    <p>Obavljamo dopisaću tekst</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="sterilizacija">✂️
+                Sterilizacija</button>
+            <div id="sterilizacija" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Sterilizacija</h3>
+                    <p>Obavljamo dopisaću tekst</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="mikrocipovanje">📌
+                Mikročipovanje</button>
+            <div id="mikrocipovanje" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Mikročipovanje</h3>
+                    <p>Obavljamo dopisaću tekst</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button class="btn btn-outline-success w-100 popup-button" data-target="prevencija">🧴 Prevencija
+                parazita</button>
+            <div id="prevencija" class="popup">
+                <div class="popup-content usluga-popup">
+                    <span class="close zatvori-popup">&times;</span>
+                    <h3>Prevencija parazita</h3>
+                    <p>Obavljamo dopisaću tekst</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container opis-usluga-box">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <p class="lead text-center opis-usluga-text">
+                Naša veterinarska ambulanta ZdravPaw posvećena je pružanju vrhunskih i sveobuhvatnih usluga za vaše
+                ljubimce. Bilo da se radi o redovnoj vakcinaciji, složenim hirurškim zahvatima, preciznoj dijagnostici
+                ili svakodnevnoj nezi i rehabilitaciji, naš stručni tim veterinarskih lekara i tehničara stoji vam na
+                raspolaganju sa najvećom pažnjom i posvećenošću. Razumemo koliko su vaši ljubimci važni članovi porodice
+                i zato se trudimo da im obezbedimo ne samo medicinsku pomoć, već i toplu i prijateljsku atmosferu u
+                kojoj će se osećati sigurno i voljeno. Kontaktirajte nas za dodatne informacije, savetovanje ili
+                zakazivanje termina i dozvolite nam da brinemo o zdravlju i sreći vaših dragocenih životinja.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

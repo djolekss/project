@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4 boja">Zakazivanje termina</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="veterinar" class="form-label boja">Veterinar:</label>
+                    <select name="veterinar_id" class="form-select" required>
+                        {% for veterinar in veterinari %}
+                        <option value="{{ veterinar[0] }}">{{ veterinar[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="datum" class="form-label boja">Datum:</label>
+                    <input type="date" class="form-control datepicker" name="datum" autocomplete="off" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="vreme" class="form-label boja">Vreme:</label>
+                    <input type="text" name="vreme" class="form-control timepicker" autocomplete="off" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="opis" class="form-label boja">Opis pregleda:</label>
+                    <textarea name="opis" class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn w-100" style="background-color: #2b7a78; color: white;">
+                    Zakaži
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

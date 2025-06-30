@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-3 sidebar">
+            <h5 class="mb-3 d-none d-md-block">👤 {{ session['ime'] }} {{ session['prezime'] }}</h5>
+            <div class="nav flex-column" id="menu">
+                <a href="#" class="nav-link meni-profil active boja" data-target="zivotinje">📄 Registrovane
+                    životinje</a>
+                <a href="#" class="nav-link meni-profil boja " data-target="pregledi">📄 Moji termini</a>
+                <a href="#" class="nav-link meni-profil boja" data-target="moji-podaci">📄 Moji podaci</a>
+            </div>
+        </nav>
+        <main class="col-md-9 p-4">
+            <div id="zivotinje" class="content-tab">
+                {% if zivotinje %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Vrsta životinje</th>
+                                <th>Rasa</th>
+                                <th>Ime životinje</th>
+                                <th>Datum rođenja</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zivotinja in zivotinje %}
+                            <tr>
+                                <td>{{ zivotinja[3] }}</td>
+                                <td>{{ zivotinja[4] }}</td>
+                                <td>{{ zivotinja[5] }}</td>
+                                <td>{{ zivotinja[6] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-warning">Nemate registrovanih životinja!</div>
+                {% endif %}
+            </div>
+            <div id="pregledi" class="content-tab d-none">
+                {% if termini %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Veterinar</th>
+                                <th>Datum termina</th>
+                                <th>Vreme</th>
+                                <th>Opis</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for termin in termini %}
+                            <tr>
+                                <td>{{ termin[2] }}</td>
+                                <td>{{ termin[3] }}</td>
+                                <td>{{ termin[4] }}</td>
+                                <td>{{ termin[5] }}</td>
+                                <td>{{ termin[6] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-warning">Nemate termine za prikaz!</div>
+                {% endif %}
+            </div>
+            <div id="moji-podaci" class="content-tab d-none">
+                <h3>📄 Promeni lozinku</h3>
+                <form method="post" class="p-3 border rounded bg-light">
+                    <div class="mb-3">
+                        <label for="password1" class="form-label">Stara lozinka</label>
+                        <input type="password" class="form-control" id="password1" name="password1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Nova lozinka</label>
+                        <input type="password" class="form-control" id="password2" name="password2" required
+                            pattern="^(?=.*[A-Z])(?=.*\d).+$"
+                            title="Lozinka mora sadržati bar jedno veliko slovo i jedan broj.">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #2b7a78;">Sačuvaj
+                        izmene</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

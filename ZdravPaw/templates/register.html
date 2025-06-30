@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4 boja">Registracija</h4>
+            <form method="POST" action="{{ url_for('register') }}">
+                <div class="mb-3">
+                    <label for="ime" class="form-label boja">Ime</label>
+                    <input type="text" class="form-control" name="ime" required>
+                </div>
+                <div class="mb-3">
+                    <label for="prezime" class="form-label boja">Prezime</label>
+                    <input type="text" class="form-control" name="prezime" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label boja">Email adresa</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label boja">Lozinka</label>
+                    <input type="password" class="form-control" name="password" required
+                        pattern="^(?=.*[A-Z])(?=.*\d).+$"
+                        title="Lozinka mora sadržati bar jedno veliko slovo i jedan broj.">
+                </div>
+                <button type="submit" class="btn w-100 custom-green-btn">Pošalji</button>
+            </form>
+            <div class="text-center mt-3">
+                <small class="boja">Već imate nalog? <a href="{{ url_for('login') }}">Prijavite se</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
